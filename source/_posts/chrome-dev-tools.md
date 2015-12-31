@@ -2,6 +2,11 @@ title: 谷歌Chrome develop tools 常用功能
 date: 2015-11-14 16:28:26
 tags:
 ---
+
+收集一些常用的chrome调试技巧
+
+<!-- more -->
+
 本文依据的chrome版本为`windows 版本 46.0.2490.80 m`
 
 ## 格式化代码

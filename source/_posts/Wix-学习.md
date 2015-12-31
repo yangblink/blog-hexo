@@ -4,6 +4,7 @@ tags: wix
 ---
 最近在学习[Wix toolset](http://wixtoolset.org/) (版本3.10)，阅读了官网的[文档](http://wixtoolset.org/documentation/manual/v3/)和[教程](https://www.firegiant.com/wix/tutorial/)，记录下所学和遇到的一些问题。
 
+<!-- more -->
 `Wix`可以通过配置xml格式的文件`.wxs`生成`.msi`安装包，下载之后将安装目录下的`bin`文件夹添加到系统的环境变量下，这样我们就可以在cmd里面使用Wix的命令行了，打包主要用到的命令行是`candle.exe`和`light.exe`。
 
 `candle.exe`将目标`*.wxs`转换成`light.exe`可识别的`*.wixobj`文件。

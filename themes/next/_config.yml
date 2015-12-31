@@ -4,7 +4,8 @@ menu:
   #categories: /categories
   #about: /about
   archives: /archives
-  tags: /tags
+  github: https://github.com/yqb1989
+  # tags: /tags
   #commonweal: /404.html
 
 # Place your favicon.ico to /source directory.
@@ -16,8 +17,11 @@ avatar: /images/yang1.jpg
 # 百度统计
 baidu_analytics: 38931a43c6ab6aff1e54bd3082daa058
 
+# 多说评论 
+duoshuo_shortname: yangblink
+
 # Set default keywords (Use a comma to separate)
-keywords: "Hexo,next"
+keywords: "Hexo,yangblink,blog"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -35,7 +39,7 @@ icon_font: default
 # Code Highlight theme
 # Available value: normal | night | night eighties | night blue | night bright
 # https://github.com/chriskempson/tomorrow-theme
-highlight_theme: normal
+highlight_theme: night bright
 
 
 # MathJax Support
