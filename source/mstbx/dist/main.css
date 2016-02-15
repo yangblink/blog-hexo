@@ -1,0 +1,247 @@
+body {
+  font-family: "微软雅黑";
+}
+.main-table {
+  border-collapse: collapse;
+  display: inline-block;
+  width: 500px;
+  margin-right: -5px;
+  margin-bottom: -5px;
+}
+.main-table td {
+  border: 1px solid #000;
+}
+.main-table .side {
+  text-align: center;
+}
+.map-marker-start {
+  color: #4cb07e;
+}
+.map-marker-end {
+  color: #de6a71;
+}
+.didi-chevron {
+  color: #c6c6c6;
+  float: right;
+}
+.shell,
+.overview {
+  width: 1000px;
+  margin: auto;
+}
+.main {
+  width: 380px;
+  display: inline-block;
+  font-family: "微软雅黑";
+}
+.time-wrap {
+  margin-bottom: 10px;
+}
+.title {
+  margin: 1em;
+  font-size: 1em;
+  text-align: left;
+}
+.title .time {
+  display: inline-block;
+  font-weight: 400;
+  margin-right: 20px;
+}
+.title .category {
+  display: inline-block;
+  padding: 0.1em 0.3em;
+  border-radius: 5px;
+  border: 1px solid #bebebe;
+  color: #bebebe;
+}
+.title .status {
+  float: right;
+  text-align: right;
+  display: inline-block;
+  color: #6b6b6b;
+  line-height: 25px;
+}
+.start-place {
+  margin-bottom: 10px;
+}
+.end-place {
+  margin-bottom: 20px;
+}
+.order {
+  font-size: 1em;
+  margin: 1em;
+  text-align: left;
+}
+.order .head .avatar {
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: top;
+}
+.order .head .avatar img {
+  margin-right: 1em;
+}
+.order .head .info {
+  display: inline-block;
+}
+.order .head .name {
+  position: relative;
+  margin-bottom: 0.3em;
+  color: #363636;
+}
+.order .head .color {
+  position: relative;
+  margin-bottom: 0.3em;
+  color: #5d5d5d;
+}
+.order .head .order-info {
+  font-size: 0.6em;
+}
+.order .head .order-info .fa-star,
+.order .head .order-info .fa-star-half,
+.order .head .order-info .fa-star-half-o {
+  font-size: 0.6em;
+  color: #fdb04f;
+}
+.order .head .order-info .stars-num {
+  background-color: #fdb04f;
+  padding: 0 9px;
+  margin: 0 15px;
+  border-radius: 3px;
+  color: #fff;
+}
+.order .head .order-info .orders {
+  color: #5d5d5d;
+}
+.order .head .phone {
+  float: right;
+}
+.order .division {
+  text-align: center;
+  color: #bebebe;
+  margin: 1em 0;
+}
+.order .payinfo {
+  text-align: center;
+}
+.order .payinfo .pay {
+  font-size: 3em;
+  font-family: "微软雅黑 Light";
+}
+.order .payinfo .detail {
+  color: #909090;
+}
+.fa-circle.dot {
+  font-size: 3px;
+  vertical-align: middle;
+}
+.order-detail {
+  font-size: 1em;
+  margin: 1em 5em 0 5em;
+  text-align: left;
+  height: 110px;
+}
+.order-detail .division {
+  text-align: center;
+  color: #bebebe;
+  margin: 50px 0;
+}
+.order-detail .payinfo {
+  text-align: center;
+}
+.order-detail .payinfo .pay-base {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+.order-detail .payinfo .pay {
+  font-size: 77px;
+}
+.order-detail .payinfo .detail {
+  color: #909090;
+}
+.order-detail .payinfo p {
+  color: #5d5d5d;
+  margin: auto;
+  text-align: left;
+}
+.order-detail .payinfo p span {
+  float: right;
+}
+.order-detail .payinfo p.pay-for {
+  color: #fdb04f;
+}
+.who {
+  border-collapse: collapse;
+  margin-bottom: 50px;
+  height: 30px;
+  width: 100%;
+}
+.who td,
+.who tr {
+  border: 1px solid #000;
+  border-collapse: collapse;
+}
+.who td {
+  text-align: center;
+}
+.who td input {
+  outline: none;
+  border: 0;
+}
+.content {
+  border-collapse: collapse;
+}
+.content td,
+.content tr {
+  border: 1px solid #000;
+  border-collapse: collapse;
+}
+.table-div {
+  text-align: center;
+  border: 1px solid #000;
+}
+.table-div.div1 {
+  text-align: left;
+}
+.table-div.div1 > div {
+  display: inline-block;
+}
+.table-div.div1 .div1-1 {
+  width: 40px;
+}
+.table-div.div1 .div1-2 {
+  border-left: 1px solid #000;
+}
+.table-div.div2 {
+  text-align: left;
+}
+.table-div.div2 > div {
+  display: inline-block;
+}
+.table-div.div2 .div2-1 {
+  width: 40px;
+}
+.table-div.div2 .div2-2 {
+  border-left: 1px solid #000;
+}
+.table-div.div3 {
+  text-align: left;
+}
+.table-div.div3 > div {
+  display: inline-block;
+}
+.table-div.div3 .div3-1 {
+  width: 40px;
+}
+.table-div.div3 .div3-2 {
+  border-left: 1px solid #000;
+}
+#generate {
+  margin: 20px 0;
+}
+.btn.order-num {
+  margin: 20px 0;
+}
+#dachebaoxiao_title:hover {
+  cursor: pointer;
+  color: green;
+}

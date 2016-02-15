@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./dist/main.css">
+    <link rel="stylesheet" href="./dist/lib/font-awesome-4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./dist/lib/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./dist/lib/datepicker-bootstrap/css/datepicker-bootstrap.css">
+</head>
+
+<body>
+    <div class="overview">
+        <h4>名师堂滴滴打车报销。</h4>
+        <h4>你可以在<a href="https://github.com/yqb1989/mstbx" target="_blank">这里</a>找到源代码</h4>
+        <h4>除了时间和消费金额以及明晰其他数据全部随机，时间也是随机，所以有可能会出现时间比打卡时间早的可能，你可以在表单中单独调整。其他所有的随机数据也可以调整，但是需要使用浏览器开发者工具修改。</h4>
+        <h4>ps: 出现任何bug请先切换到chrome浏览器。</h4>
+        <div class="form-group">
+            <label for="">请选择日期：</label>
+            <input id="mytimes"  data-provide="datepicker" class="datepicker form-control" placeholder="请选择日期,点击空白处隐藏日期" required="required">
+            <label for="">请输入出发地点：</label>
+            <input id="mystart" type="text" class="form-control" placeholder="出发地" required="required" value="拱宸桥街道温州路南北商务港">
+            <label for="">请输入目的地：</label>
+            <input id="myend" type="text" class="form-control" placeholder="目的地(-.- )别说你有很多个家" required="required">
+            <button id="generate" class="btn btn-primary btn-sm">生成</button>
+        </div>
+
+        <div id="generate_order"></div>
+    </div>
+    <div class="shell">
+        <h4 id="dachebaoxiao_title" title="点我隐藏上面的东西">滴滴打车报销模板<span id="hide_title">(点击隐藏/显示)</span></h4>
+        <table class="who">
+            <tr>
+                <td>申请人</td>
+                <td>
+                    <input type="text">
+                </td>
+                <td>部门</td>
+                <td>
+                    <input type="text">
+                </td>
+            </tr>
+        </table>
+        <div id="table_wrap"></div>
+    </div>
+
+
+    <script id="didi_orders" type="text/html">
+        <% for(var i = 0; i < orders.length; i++) { %>
+            <button class="btn btn-info order-num">第<%= i + 1%>单</button>
+            <div class="form-inline order-generate-detail">
+                <label for="" class="control-label">时间:</label>
+                <input type="text" class="form-control order-time" placeholder="时间" value="<%= orders[i].time%>" required="required">
+                <label for="" class="control-label">总消费:</label>
+                <input type="text" class="form-control order-total" placeholder="总消费" required="required">
+                <!--p style="margin:20px 0;">优惠信息:</p-->
+                <div class="order-detail-group">
+                    <div class="line">
+                        <input type="text" class="form-control order-title" placeholder="微信免密 7折抵扣券 ...">
+                        <input type="text" class="form-control order-num" placeholder="¥">
+                        <button class="btn btn-primary btn-sm del-order-detail">删除</button>
+                        <button class="btn btn-primary btn-sm add-order-detail">添加</button>
+                    </div>
+                </div>
+            </div>  
+        <% } %>
+        
+        <button id="generate_table" class="btn btn-primary" style="margin: 20px 0;">生成打印报表</button>
+    </script>
+
+
+    <script id="didi_main" type="text/html">
+        <% for(var i = 0; i < orders.length; i++) { %>
+        <table class="main-table" width="100%">
+            <col style="width: 50px;" />
+            <col style="width: 450px;" />
+            <tr>
+                <td colspan="2" class="title" style="text-align: center">第<%= i + 1%>单</td>
+            </tr>
+            <tr>
+                <td class="title side">我的行程截图</td>
+                <td>
+                    <div class="title">
+                        <div class="time-wrap">
+                            <div class="time"><%= orders[i].date%></div>
+                            <div class="category"><%= orders[i].category%></div>
+                            <div class="status"><span><%= orders[i].status%></span></div>
+                        </div>
+                        <div class="travel-wrap">
+                            <div class="start-place">
+                                <i class="fa fa-map-marker map-marker-start"></i>
+                                <span><%= orders[i].start_place%></span>
+                                <i class="fa fa-angle-right didi-chevron"></i>
+                            </div>
+                            <div class="end-place">
+                                <i class="fa fa-map-marker map-marker-end"></i>
+                                <span><%= orders[i].end_place%></span>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="title side">行程详情截图</td>
+                <td>
+                    <div id="driver">
+                        <div class="order">
+                            <div class="head">
+                                <div class="avatar">
+                                    <img src="./dist/img/drive.png" alt="" width="56px" height="56px">
+                                </div>
+                                <div class="phone">
+                                    <img src="./dist/img/phone.png" alt="" width="46px" height="46px">
+                                </div>
+                                <div class="info">
+                                    <div class="name"><%= orders[i].dirver.name%>师傅 · 浙**<%= orders[i].dirver.plate_num%></div>
+                                    <div class="color"><%= orders[i].dirver.brand%></div>
+                                    <div class="order-info">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <span class="stars-num"><%= orders[i].dirver.stars%></span>
+                                        <span class="orders"><%= orders[i].dirver.orders%>单</span>
+                                        <i class="fa fa-angle-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="division">
+                                ————— 成功支付 —————
+                            </div>
+                            <div class="payinfo">
+                                <span class="pay"><%= orders[i].pay.total%></span>
+                                <span class="currency">元</span>
+                                <p class="detail">查看明细 <i class="fa fa-angle-right"></i></p>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="title side">查看明细截图</td>
+                <td>
+                    <div id="order">
+                        <div class="order-detail">
+                            <div class="payinfo">
+                                <div class="pay-discount">
+                                    <% for(var j = 0; j < orders[i].pay.pay_details.length; j++) { %>
+                                    <p class="pay-for"><%= orders[i].pay.pay_details[j].title %><span>-<%= orders[i].pay.pay_details[j].num %>元</span></p>
+                                    <% } %>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+
+            <%if (i + 1 % 4 == 0){ %>
+                <div style="{page-break-after:always;}"></div>
+            <% } %>
+        <% } %>
+    </script>
+</body>
+<script src="./dist/lib/arttemplate/arttemplate-native.js"></script>
+<script src="./dist/lib/randexp/randexp.min.js"></script>
+<script src="./dist/lib/lodash/lodash.js"></script>
+<script src="./dist/lib/jquery/dist/jquery.js"></script>
+<script src="./dist/lib/bootstrap/dist/js/bootstrap.js"></script>
+<script src="./dist/lib/datepicker-bootstrap/js/bootstrap-datepicker.js"></script>
+<script src="./dist/lib/datepicker-bootstrap/locales/bootstrap-datepicker.zh-CN.js"></script>
+<script src="./dist/all.js"></script>
+</html>
