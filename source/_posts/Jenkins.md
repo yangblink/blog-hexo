@@ -1,5 +1,6 @@
 title: 使用 Jenkins 部署 gulp 构建的静态项目
-tags: [jenkins]
+tags:
+  - jenkins
 categories: []
 date: 2016-06-23 14:13:00
 ---
@@ -85,9 +86,9 @@ npm install && gulp build
 ![Alt text](./1466593401737.png)
 ![Alt text](./1466593433014.png)
 
--  `Source file`： 为你要上传的文件，可以使用[shell 匹配语法](http://wiki.bash-hackers.org/syntax/pattern)匹配你需要的文件
+-  `Source file`： 项目的当前目录下要上传的文件，可以使用[shell 匹配语法](http://wiki.bash-hackers.org/syntax/pattern)匹配你需要的文件
 - `Remove prefix`: 文件路径的修正，比如你的`Source file`填的是`foo/bar/distfile.js`,这里填写`foo/bar`，那么上传的文件就不会在目标服务器上新建`foo/bar`这个路径。
-- `Remote directory`： 你要上传文件相对于服务器配置项中的路径的 相对路径
-- `Exec command`: 上传文件之后需要执行的脚本
+- `Remote directory`： 你上传的文件会在远端建立的一个零时的目录，这个配置表示在这个临时目录下的相对路径
+- `Exec command`: 上传完文件之后要执行的脚本，通常都是执行拷贝操作，如：`cp -R warBackup/tmpDir/* /dist/dir`
 
 配置好上述选项之后我们的jenkins任务就可以执行了，你可以在`Console Output`中看到任务执行各个具体过程中的日志
