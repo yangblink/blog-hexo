@@ -1,0 +1,19 @@
+menu:
+    归档: /archives/
+    简书: http://www.jianshu.com/u/1543c8434723
+    github: https://github.com/yangblink
+
+favicon: /favicon.png
+logo: /favicon.png
+
+# Comment
+# e.g disqus: seansun
+disqus: yangblink
+duoshuo:
+
+# Analytics
+# google-analytics:
+ga: UA-65933410-1
+
+# Copyright Infomation
+startyear: 2015
