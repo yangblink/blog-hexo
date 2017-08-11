@@ -1,6 +1,7 @@
 title: 提升node-sass安装速度
 date: 2017-08-09 18:33:21
-tags: node-sass
+tags:
+  - node-sass
 ---
 
 ## 为什么很慢？

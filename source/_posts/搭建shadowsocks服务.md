@@ -1,6 +1,7 @@
 title: 搭建shadowsocks服务
 date: 2017-08-10 07:50:31
-tags: shadowsocks
+tags:
+  - shadowsocks
 ---
 
 首先你需要一个vps，这里推荐使用 `centos6`因为这方便安装`锐速`
